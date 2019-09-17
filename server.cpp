@@ -46,17 +46,17 @@ int main()
 	if ((new_socket = accept(server_fd, (struct sockaddr *)&address, 
 					(socklen_t*)&addrlen))<0) 
 	{ 
-		perror("accept"); 
-		exit(EXIT_FAILURE); 
+		perror("accept");
+		exit(EXIT_FAILURE);
 	}
 
-	char filename[] = "../Barn-owl.jpeg";
+	char filename[] = "file.txt";
 	FILE *fh = fopen(filename, "r");
 	fseek(fh, 0, SEEK_END);
 	int fileSize = ftell(fh);
 	fseek(fh, 0, SEEK_SET);
 	char* buffer = new char[fileSize];
-	int r, chunkSize = fileSize, chunkAmount = 1;
+	int r, chunkSize = 1, chunkAmount = fileSize;
 
 	valread = read( new_socket , buffer, 2048);
 	printf("%s\n",buffer );

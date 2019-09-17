@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 {
 	struct sockaddr_in serv_addr;
 	int sock = 0, valread;
-	char buffer[184977];
+	char buffer[5024];
 	char const *msg = "ping";
 	FILE *fh = fopen("result.txt", "ab");
 
