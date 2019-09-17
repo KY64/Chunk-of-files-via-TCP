@@ -62,7 +62,10 @@ int main()
 	}
 
 	//Specify which file need to send
-	char filename[] = "file.txt";
+	char *filename;
+	printf("Input file: ");
+	scanf("%s", filename);
+	fflush(stdin);
 	FILE *fh = fopen(filename, "r");
 
 	//Make sure the file exists
